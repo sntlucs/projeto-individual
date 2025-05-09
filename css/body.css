@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins-Regular";
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("../fonte/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-ExtraBold";
+    src: url("../fonte/Poppins/Poppins-ExtraBold.ttf");
+}
+
+:root {
+    --corBotaoMain: #483EA4;
+    --corTextoMarrom: #9C6DF5;
+    --corBotaoHeader: #483EA4;
+    --corSecaoCinza: #93919157;
+
+    --corFundoForm: #ffffff;
+    --corTextoForm: #000000;
+    --corTextoForm2: #404245;
+    --corTextoForm3: #808b96;
+    --corLinkForm: #2727cd;
+    --corInputForm: #5d6d7e;
+    --corBotaoForm: #483EA4;
+
+    --corFundoKPI: #121212;
+    --corBotaoKPI: #c18e41;
+}
+
+:root .escuro {
+    --corFundoBody: #2A292E;
+    --corTexto: #ffffff;
+}
+
+:root .claro {
+    --corFundoBody: #043247;
+    --corTexto: #ffffff;
+}
+
+:root .ciano {
+    --corFundoBody: #043247;
+    -corTexto: #ffffff;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: 6rem 1fr 6rem;
+    color: var(--corTexto);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}

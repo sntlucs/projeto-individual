@@ -1,0 +1,124 @@
+header.login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image {
+        display: flex;
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: var(--corFundoForm);
+        border-radius: 5px;
+        width: 1250px;
+        border: none;
+    }
+
+    h1 {
+        color: var(--corTextoForm);
+        font-size: 2.5rem;
+        font-weight: 600;
+    }
+
+    h3 {
+        color: var(--corTextoForm2);
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: context-menu;
+    }
+
+    h4 {
+        font-weight: 500;
+        font-size: 1rem;
+        color: var(--corTextoForm3);
+        cursor: context-menu;
+        justify-items: right;
+        justify-content: right;
+    }
+
+    a {
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        color: var(--corLinkForm);
+        cursor: pointer;
+    }
+
+    .section-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.6rem;
+        padding: 0 2.5rem 0 2.5rem;
+    }
+
+    input {
+        width: 100%;
+        height: 3rem;
+        border-radius: 0.8rem;
+        border: 1px var(--corTextoForm3) solid;
+        outline: none;
+        padding: 0.3rem 0.9rem;
+        color: var(--corFundoForm);
+        background-color: var(--corInputForm);
+    }
+
+    input::placeholder {
+        color: var(--corFundoForm);
+    }
+
+    input:focus {
+        border: 1px var(--corBotaoForm) solid;
+    }
+
+    label {
+        color: var(--corTextoForm);
+        font-weight: 600;
+    }
+
+    button {
+        border-radius: 12px;
+        border: 1px var(--corBotaoForm) solid;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        background-color: var(--corBotaoForm);
+        font-weight: 600;
+        font-size: 1rem;
+        transition: 0.2s ease-in-out;
+        margin-top: 5px;
+        color: var(--corTexto);
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #483EA4;
+    }
+}
+
+.carro .content { 
+    height: 600px;
+    
+}
+
+.cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

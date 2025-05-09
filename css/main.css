@@ -1,0 +1,204 @@
+main {
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+}
+
+.section_pagina {
+    scroll-margin-top: 4rem;
+    min-height: 90vh;
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+}
+
+#home {
+    display: flex;
+    margin-top: 0;
+}
+
+#home .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+.titulo {
+    font-family: "Tagesschrift";
+    font-size: 3rem;
+}
+
+.subtitulo {
+    font-family: "Tagesschrift";
+    color: #ffffff;
+}
+
+.section_textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.section_botao {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.section_img {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_fundo {
+    width: 50vh;
+}
+
+.img_fundo_home {
+    width: 80vh;
+    border-radius: 12px;
+}
+
+.dado_gif{
+    width: 30vh;
+}
+
+.iconConteudo {
+    width: 40%;
+}
+
+.texto_marrom {
+    color: var(--corTextoMarrom);
+}
+
+#conteudo .container {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    p {
+        text-align: center;
+    }
+    
+    .section_servicos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2rem 0;
+
+        .servico {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 2rem;
+            color: white;
+        }
+
+        .servico:last-child{
+           
+            color: white;
+        }
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+#sobreNos .container {
+    display: flex;
+    grid-template-rows: 1fr 5fr;
+
+    .marcas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+#contato {
+    display: flex;
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+.texto_pequeno {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+table {
+    width: 75%;
+    background-color: var(--corTextoForm);
+    color: var(--corTextoForm);
+    padding: 0.5rem;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+}
+
+th {
+    background-color: var(--corBotaoForm);
+}
+
+td {
+    background-color: var(--corTexto);
+}
+
+.btnTabela {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: var(--corBotaoKPI);
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+}
+
+.btnTabela:hover {
+    background-color: #A47C3E;
+}
+
+button .iconeTabela {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+.tabelas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cadastrar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cadastrar .btnTabela {
+    border-radius: 50%;
+}
