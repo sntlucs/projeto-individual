@@ -24,14 +24,24 @@
                 </a>
             </section>
 
-            <nav>
-                <a href="#conteudo"> Nosso Conteúdo </a>
-                <a href="#oqRPG"> O que é </a>
-                <a href="pages/login.html"> Login </a>
-                <a href="pages/cadastro.html" class="botao header"> Cadastrar-se </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="#conteudo">Nosso Conteúdo</a></li>
+                    <li><a href="#invisivel">O que é</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
+                    <li><a href="pages/cadastro.html" class="botao header">Cadastrar-se</a></li>
+                </ul>
             </nav>
         </section>
     </header>
+
 
     <main>
         <section id="home" class="escuro section_pagina">
@@ -51,8 +61,7 @@
                 </section>
 
                 <section class="section_img">
-                    <img class="img_fundo_home"
-                        src="img/gifs/caindo.gif" alt="Imagem">
+                    <img class="img_fundo_home" src="img/gifs/caindo.gif" alt="Imagem">
                     <section class="section_cinza"></section>
                 </section>
 
@@ -114,6 +123,8 @@
             </section>
         </section>
 
+        <section id="invisivel"></section>
+
         <section id="sobreNos" class="escuro section_pagina">
             <section id="oqRPG" class="container">
 
@@ -144,9 +155,9 @@
         <section id="contato" class="claro section_pagina">
             <section class="container">
                 <h1 class="titulo">Dados</h1>
-                <img class="dado_gif" src="img/gifs/legais/dado.gif" alt=""> 
+                <img class="dado_gif" src="img/gifs/legais/dado.gif" alt="">
                 <section class="section_botao">
-                    <a href="" class="botao main"> Gerador </a>
+                    <a href="pages/dado.html" class="botao main"> Gerador </a>
                 </section>
                 <p> Um gerador de dados virtuais para realizar suas jogadas! </p>
             </section>
@@ -157,5 +168,13 @@
         <p> Made by Lucas Rodrigues. </p>
     </footer>
 </body>
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const overlay = document.querySelector('.overlay');
+
+  overlay.addEventListener('click', () => {
+    menuToggle.checked = false;
+  });
+</script>
 
 </html>

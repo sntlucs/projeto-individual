@@ -2,9 +2,12 @@
 <html lang="pt-br">
 
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo/logoCurta.png" type="image/x-icon">
+    <link rel="shortcut icon" href="\img/logo/logoCurta.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/body.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/main.css">
@@ -15,10 +18,30 @@
 
 <body>
 
-    <header class="escuro login">
-        <a href="../index.html">
-            <img class="logo" src="../img/logo/logoExtensa.png" alt="Logo">
-        </a>
+    <header class="escuro">
+        <section class="container">
+            <section id="header_logo">
+                <a href="\index.html">
+                    <img class="logo" src="\img/logo/logoExtensa.png" alt="Logo do Site">
+                </a>
+            </section>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="../index.html#conteudo">Nosso Conteúdo</a></li>
+                    <li><a href="../index.html#invisivel">O que é</a></li>
+                    <li><a href="\index.html">Home</a></li>
+                    <li><a href="login.html" class="botao header">Login</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
     <main class="escuro cadastro">
@@ -27,12 +50,12 @@
 
             <section class="content">
 
-                
+
 
                 <section class="section-input">
 
                     <h1> Cadastro </h1>
-                    <h3> Insira os seguintes dados </h3>
+                    <h3> Insira os dados para concluir seu cadastro </h3>
 
                     <label for="ipt_nome"> Nome </label>
                     <input type="text" id="ipt_nome" placeholder="Insira seu nome">

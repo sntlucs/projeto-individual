@@ -1,5 +1,5 @@
 footer {
-    background-color: var(--corFundoBody);
+    background-color: var(--corFundo);
     color: var(--corTexto);
     display: flex;
     align-items: center;
