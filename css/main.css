@@ -19,6 +19,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
+    margin-left: 4vh;
 }
 
 .titulo {
@@ -64,6 +65,10 @@ main {
 .img_fundo_home {
     width: 80vh;
     border-radius: 12px;
+}
+
+.img_dados{
+    width: 25vh;
 }
 
 .dado_gif {
@@ -195,6 +200,10 @@ button .iconeTabela {
 
 .cadastrar .btnTabela {
     border-radius: 50%;
+}
+
+.dado_gif{
+    padding: 2vh;
 }
 
 /* ---------------- ROLADOR DE DADOS (dado.html) ---------------- */

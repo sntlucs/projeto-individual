@@ -4,7 +4,7 @@ header {
     background-color: var(--corFundo);
     display: flex;
     align-items: center;
-    height: 12vh;
+    height: 13.3vh;
     z-index: 1002;
 }
 
