@@ -283,3 +283,55 @@ button .iconeTabela {
         transform: translateY(0);
     }
 }
+
+/* Seção 'Como Jogar' */
+#comoJogar .como-jogar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#comoJogar .como-jogar-texto {
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
+#comoJogar .como-jogar-imagem {
+    margin-top: 2rem;
+}
+
+#comoJogar .como-jogar-imagem-interna {
+    width: 60vh;
+    border-radius: 12px;
+}
+
+.titulo2 {
+    font-family: "Tagesschrift";
+    font-size: 3rem;
+    text-align: center;
+}
+
+.primeiro {
+    scale: 200%;
+}
+
+.imagem_rpgs {
+    width: 30vh;
+    border-radius: 1rem;
+}
+
+#img_principal {
+    width: 40vh;
+    border-radius: 1rem;
+}
+
+.textos_rpg {
+    margin-bottom: 5vh;
+}
+
+.subtitulo2 {
+    font-family: "Tagesschrift";
+    color: #ffffff;
+    font-size: larger;
+}
