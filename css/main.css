@@ -44,7 +44,7 @@ main {
 
 .section_botao {
     display: flex;
-    justify-content: center; /* Botões centralizados */
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
@@ -52,7 +52,6 @@ main {
 }
 
 .section_img {
-    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;

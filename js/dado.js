@@ -1,11 +1,11 @@
-    function addDice() {
-      const diceConfigs = document.getElementById('dice-configs');
+    function addDado() {
+      const dadoConfigs = document.getElementById('dado-config');
 
       const div = document.createElement('div');
-      div.classList.add('dice-entry');
+      div.classList.add('escolher-dado');
       div.innerHTML = `
         <label>Dado:</label>
-        <select class="dice-type">
+        <select class="dado-tipo">
           <option value="4">D4</option>
           <option value="6">D6</option>
           <option value="8">D8</option>
@@ -16,36 +16,36 @@
         </select>
 
         <label>Quantidade:</label>
-        <input type="number" class="dice-quantity" min="1" value="1" />
+        <input type="number" class="qtd-dados" min="1" value="1" />
       `;
       diceConfigs.appendChild(div);
     }
 
-    function rollAllDice() {
-      const diceTypes = document.querySelectorAll('.dice-type');
-      const diceQuantities = document.querySelectorAll('.dice-quantity');
+    function rollDados() {
+      const dadoTipos = document.querySelectorAll('.dado-tipo');
+      const qtdDados = document.querySelectorAll('.qtd-dados');
 
       let total = 0;
-      let detailedResults = '';
+      let resultados = '';
 
-      for (let i = 0; i < diceTypes.length; i++) {
-        const sides = parseInt(diceTypes[i].value);
-        const quantity = parseInt(diceQuantities[i].value);
+      for (let i = 0; i < dadoTipos.length; i++) {
+        const lados = parseInt(dadoTipos[i].value);
+        const quantidade = parseInt(qtdDados[i].value);
 
-        let individualResults = [];
+        let resultadosInd = [];
 
-        for (let j = 0; j < quantity; j++) {
-          const roll = Math.floor(Math.random() * sides) + 1;
-          individualResults.push(roll);
-          total += roll;
+        for (let j = 0; j < quantidade; j++) {
+          const rolar = Math.floor(Math.random() * lados) + 1;
+          resultadosInd.push(rolar);
+          total += rolar;
         }
 
-        detailedResults += `<p><strong>${quantity}x D${sides}</strong>: [${individualResults.join(', ')}] ➔ Soma: ${individualResults.reduce((a, b) => a + b, 0)}</p>`;
+        resultados += `<p><strong>${quantidade}x D${lados}</strong>: [${resultados.join(', ')}] ➔ Soma: ${resultadosInd.reduce((a, b) => a + b, 0)}</p>`;
       }
 
       document.getElementById('result').innerHTML = `
         <h2>Resultados:</h2>
-        ${detailedResults}
+        ${resultados}
         <h3>Total Geral: ${total}</h3>
       `;
     }
