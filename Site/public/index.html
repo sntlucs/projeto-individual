@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Home - CodEx </title>
-    <link rel="shortcut icon" href="img/logo/logoExtensa.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/main.css">
@@ -48,13 +48,12 @@
             <section class="container">
 
                 <section class="section_textos">
-                    <h1 class="titulo"> Frase breve explicando o site </h1>
+                    <h1 class="titulo">Descubra como o RPG pode ir além do jogo.</h1>
 
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                    <p> Aqui você encontra tudo sobre RPG de mesa e videogame — desde as mecânicas e estilos até os
+                        benefícios reais que essa prática traz para a criatividade, o raciocínio e a conexão entre
+                        pessoas. <br>
+                        Seja sua primeira aventura ou mais uma campanha, este é o lugar para começar. </p>
                     <!-- <section class="section_botao">
                         <a href="pages/login.html" class="botao main"> Entrar </a>
                     </section> -->
@@ -71,55 +70,49 @@
         <section id="conteudo" class="claro section_pagina">
             <section class="container">
 
-                <h1 class="titulo"> Nosso Conteúdo </h1>
+                <h1 class="titulo"> Conteúdo </h1>
 
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. </p>
+                <p> Explore os diferentes caminhos que o RPG pode oferecer. 
+                    Aqui você encontra tudo o que precisa para começar sua jornada, seja pelos dados de uma mesa, 
+                    pelas fases de um jogo ou pelos estudos que revelam o impacto positivo do RPG na vida real. </p>
 
                 <section class="section_servicos">
                     <section class="servico">
                         <img src="img/gifs/legais/conteudo1.gif" alt="" class="iconConteudo">
 
-                        <h3 class="subtitulo"> Lorem Ipsum </h3>
+                        <h3 class="subtitulo"> RPG de Mesa </h3>
 
                         <ul>
-                            <li> Lorem Ipsum </li>
-                            <li> Lorem Ipsum </li>
-                            <li> Lorem Ipsum </li>
+                            <li> O que é RPG de mesa </li>
+                            <li> Como começar a jogar </li>
+                            <li> Materiais, dicas e sistemas para iniciantes </li>
                         </ul>
                     </section>
 
                     <section class="servico">
                         <img src="img/gifs/legais/conteudo2.gif" alt="" class="iconConteudo">
 
-                        <h3 class="subtitulo"> Lorem Ipsum </h3>
+                        <h3 class="subtitulo"> Ciência & RPG </h3>
 
                         <ul>
-                            <li> Lorem Ipsum </li>
-                            <li> Lorem Ipsum </li>
-                            <li> Lorem Ipsum </li>
+                            <li> Benefícios de jogar RPG </li>
+                            <li> Pesquisas sobre narrativa e desenvolvimento pessoal </li>
+                            <li> RPG como ferramenta educacional e terapêutica </li>
                         </ul>
                     </section>
 
                     <section class="servico">
                         <img src="img/gifs/legais/conteudo3.gif" alt="" class="iconConteudo">
 
-                        <h3 class="subtitulo"> Lorem Ipsum </h3>
+                        <h3 class="subtitulo"> RPG nos Videogames </h3>
 
                         <ul>
-                            <li> Lorem Ipsum </li>
-                            <li> Lorem Ipsum </li>
-                            <li> Lorem Ipsum </li>
+                            <li> Principais jogos e suas características </li>
+                            <li> Diferença entre RPGs ocidentais e Orientais </li>
+                            <li> Inspiração no RPG de Mesa </li>
                         </ul>
                     </section>
                 </section>
-
-                <p class="texto_pequeno">
-                    Lorem ipsum dolor sit amet.
-                </p>
             </section>
         </section>
 
@@ -156,13 +149,13 @@
             <section class="container">
                 <section class="section_img">
                     <img class="img_dados" src="img/gifs/legais/dados1.gif" alt="Imagem">
-                    <img class="img_dados" src="img/gifs/legais/dados2flip.gif" alt="Imagem">
+                    <img id="esquerda" class="img_dados" src="img/gifs/legais/dados3.gif" alt="Imagem">
                     <section class="section_cinza"></section>
                 </section>
-                    <h1 class="titulo"> Gerador de Dados </h1>
-                    <p> Um gerador de dados virtuais para realizar suas jogadas! </p>
-                    <section class="section_botao">
-                        <a href="pages/dado.html" class="botao main"> Gerador </a>
+                <h1 class="titulo"> Gerador de Dados </h1>
+                <p> Um gerador de dados virtuais para realizar suas jogadas! </p>
+                <section class="section_botao">
+                    <a href="pages/dado.html" class="botao main"> Gerador </a>
                 </section>
 
 
@@ -173,13 +166,7 @@
         <p> Made by Lucas Rodrigues. </p>
     </footer>
 </body>
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const overlay = document.querySelector('.overlay');
-
-    overlay.addEventListener('click', () => {
-        menuToggle.checked = false;
-    });
+<script src="./js/index.js">
 </script>
 
 </html>
