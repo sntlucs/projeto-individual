@@ -35,7 +35,7 @@ function cadastrar() {
     } else {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML = "(Mensagem de erro para Senha inválida)";
-      finalizarAguardar();
+      // finalizarAguardar();
     }
   }
 
@@ -66,15 +66,15 @@ function cadastrar() {
           window.location = "login.html";
         }, "2000");
 
-        limparFormulario();
-        finalizarAguardar();
+        // limparFormulario();
+        // finalizarAguardar();
       } else {
         throw "Houve um erro ao tentar realizar o cadastro!";
       }
     })
     .catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
+      // finalizarAguardar();
     });
 
   return false;

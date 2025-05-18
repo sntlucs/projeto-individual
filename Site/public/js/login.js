@@ -1,5 +1,5 @@
 function entrar() {
-        aguardar();
+        // aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -7,7 +7,7 @@ function entrar() {
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+            // finalizarAguardar();
             return false;
         }
 
@@ -50,7 +50,7 @@ function entrar() {
 
                     resposta.text().then(texto => {
                         console.error(texto);
-                        finalizarAguardar(texto);
+                        // finalizarAguardar(texto);
                     });
                 }
 
