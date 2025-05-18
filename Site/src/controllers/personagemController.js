@@ -1,6 +1,6 @@
 var personagemModel = require('../models/personagemModel');
 
-function cadastrarFuncionario(req, res) {
+function cadastrarPersonagem(req, res) {
     var nome = req.body.nomeServer;
     var origem = req.body.origemServer;
     var classe = req.body.classeServer;
@@ -16,7 +16,7 @@ function cadastrarFuncionario(req, res) {
     } else if (nivel == undefined) {
         res.status(400).send("O nivel está undefined!");
     } else {
-        funcionarioModel.cadastrarFuncionario(nome, origem, classe, nivel)
+        funcionarioModel.cadastrarPersonagem(nome, origem, classe, nivel)
             .then(function (resultado) {
                 res.json(resultado);
             })
