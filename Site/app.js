@@ -16,10 +16,8 @@ var HOST_APP = process.env.APP_HOST;
 var app = express();
 
 var indexRouter = require("./src/routes/index");
-var montadoraRouter = require("./src/routes/montadora");
-var funcionarioRouter = require("./src/routes/funcionario.js");
-var modeloRouter = require("./src/routes/modelo.js");
-var carroRouter = require("./src/routes/carro.js");
+var usuarioRouter = require("./src/routes/usuario");
+var personagemRouter = require("./src/routes/personagem.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,11 +26,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
-app.use("/montadora", montadoraRouter);
-app.use("/funcionario", funcionarioRouter);
-app.use("/modelo", modeloRouter);
-app.use("/carro", carroRouter);
-
+app.use("/usuario", usuarioRouter);
+app.use("/personagem", personagemRouter);
 
 app.listen(PORTA_APP, function () {
     console.log(`

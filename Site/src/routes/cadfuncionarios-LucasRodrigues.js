@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var FuncionarioController = require('../controllers/FuncionarioController');
+var personagemController = require('../controllers/personagemController');
 
-router.post('/cadastrar', FuncionarioController.cadastrar);
+router.post('/cadastrar', personagemController.cadastrar);
 
 module.exports = router;
