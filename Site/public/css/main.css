@@ -44,7 +44,7 @@ main {
 
 .section_botao {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Botões centralizados */
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
@@ -52,6 +52,7 @@ main {
 }
 
 .section_img {
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,8 +67,15 @@ main {
     border-radius: 12px;
 }
 
-.img_dados {
+.img_dados{
     width: 25vh;
+}
+
+#esquerda {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .dado_gif {
@@ -98,10 +106,8 @@ main {
 
 .section_servicos {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 2rem 0;
-    align-items: center;
-    
 }
 
 .servico {
@@ -153,8 +159,7 @@ table {
     padding: 0.5rem;
 }
 
-th,
-td {
+th, td {
     padding: 1rem;
     text-align: center;
 }
@@ -204,7 +209,7 @@ button .iconeTabela {
     border-radius: 50%;
 }
 
-.dado_gif {
+.dado_gif{
     padding: 2vh;
 }
 
@@ -225,7 +230,7 @@ button .iconeTabela {
 }
 
 /* Entrada de dados */
-.dice-entry {
+.escolher-dado {
     margin-bottom: 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -235,17 +240,16 @@ button .iconeTabela {
 
 .titulo {
     padding-bottom: 5vh;
-    font-size: 2.5rem;
 }
 
-.dice-entry label {
+.escolher-dado label {
     font-size: 1.1rem;
     margin-right: 0.5rem;
     align-self: center;
 }
 
-.dice-entry select,
-.dice-entry input {
+.escolher-dado select,
+.escolher-dado input {
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 0.4rem;
@@ -281,61 +285,8 @@ button .iconeTabela {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Seção 'Como Jogar' */
-#comoJogar .como-jogar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-#comoJogar .como-jogar-texto {
-    max-width: 800px;
-    margin-bottom: 1rem;
-}
-
-#comoJogar .como-jogar-imagem {
-    margin-top: 2rem;
-}
-
-#comoJogar .como-jogar-imagem-interna {
-    width: 60vh;
-    border-radius: 12px;
-}
-
-.titulo2 {
-    font-family: "Tagesschrift";
-    font-size: 3rem;
-    text-align: center;
-}
-
-.primeiro {
-    scale: 200%;
-}
-
-.imagem_rpgs {
-    width: 30vh;
-    border-radius: 1rem;
-}
-
-#img_principal {
-    width: 40vh;
-    border-radius: 1rem;
-}
-
-.textos_rpg {
-    margin-bottom: 5vh;
-}
-
-.subtitulo2 {
-    font-family: "Tagesschrift";
-    color: #ffffff;
-    font-size: larger;
 }
