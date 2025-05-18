@@ -27,18 +27,6 @@ function cadastrar() {
     setInterval(sumirMensagem, 5000);
   }
 
-  // Verificando se o código de ativação é de alguma empresa cadastrada
-  for (let i = 0; i < listaUsuarios.length; i++) {
-    if (!listaUsuarios.includes(cnpjVar)) {
-      console.log("CNPJ válido.");
-      break;
-    } else {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "(Mensagem de erro para Senha inválida)";
-      // finalizarAguardar();
-    }
-  }
-
   // Enviando o valor da nova input
   fetch("/usuario/cadastrar", {
     method: "POST",
