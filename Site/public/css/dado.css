@@ -1,0 +1,134 @@
+main {
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+}
+
+.section_pagina {
+    scroll-margin-top: 4rem;
+    min-height: 90vh;
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+}
+
+#home {
+    display: flex;
+    margin-top: 0;
+}
+
+#home .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    margin-left: 4vh;
+}
+
+.titulo {
+    font-family: "Tagesschrift";
+    font-size: 3rem;
+    text-align: center;
+}
+
+.subtitulo {
+    font-family: "Tagesschrift";
+    color: #ffffff;
+}
+
+.section_textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 2rem;
+    gap: 1rem;
+}
+
+.section_botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* ---------------- ROLADOR DE DADOS (dado.html) ---------------- */
+
+/* Caixa cinza */
+.caixa-dados {
+    background-color: var(--corFundoBody);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Entrada de dados */
+.escolher-dado {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.titulo {
+    padding-bottom: 5vh;
+}
+
+.escolher-dado label {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    align-self: center;
+}
+
+.escolher-dado select,
+.escolher-dado input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    min-width: 100px;
+}
+
+.botao.main {
+    font-size: 1.3rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    border: none;
+}
+
+/* Resultado */
+#result {
+    margin-top: 2rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    width: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: black;
+    word-wrap: break-word;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animação de entrada do resultado */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* REAJUSTE para a section da página de dados */
+
+
