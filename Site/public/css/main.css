@@ -90,7 +90,6 @@ main {
     color: var(--corTextoMarrom);
 }
 
-/* Conteúdo dos serviços */
 #conteudo .container {
     padding-top: 4rem;
     display: flex;
@@ -104,13 +103,13 @@ main {
     text-align: center;
 }
 
-.section_servicos {
+.section_conteudos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 2rem 0;
 }
 
-.servico {
+.conteudos {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -119,15 +118,15 @@ main {
     color: white;
 }
 
-#sobreNos .container {
+#oqeRPG .container {
     display: flex;
 }
 
-#contato {
+#section_dados {
     display: flex;
 }
 
-#contato .container {
+#section_dados .container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -313,6 +312,18 @@ button .iconeTabela {
     align-items: center;
 }
 
+.imagem-personagem {
+  width: 40vh;
+  flex-shrink: 0; 
+  border-radius: 10px;
+  margin-right: 10rem;
+}
+
+.imagem-personagem {
+  width: 40vh;
+  border-radius: 10px;
+}
+
 .imagem-esquerda {
     flex-direction: row;
 }
@@ -419,7 +430,7 @@ button .iconeTabela {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 12rem;
 }
 
 .ferramenta {
@@ -449,4 +460,42 @@ button .iconeTabela {
     font-size: 1.05rem;
     line-height: 1.6;
     color: var(--corTexto);
+}
+
+.imagem_rpg {
+    width: 55vh;
+    margin-left: 20vh;
+    margin-top: 7vh;
+    border-radius: 8px;
+    margin-right: 4rem;
+}
+
+.personagem-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0 6rem;
+  width: 100%;
+  max-width: 100%;
+  min-height: 90vh;
+}
+
+.personagem-grid .section_textos {
+  flex: 1;
+}
+
+.imagem-personagem {
+  width: 45vh;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.imagem-erpg {
+    width: 55vh;
+    margin-left: 15rem;
+    margin-top: 7vh;
+    border-radius: 8px;
+    margin-right: 2rem;
 }
