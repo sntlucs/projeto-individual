@@ -41,7 +41,7 @@ function entrar() {
                     });
 
                     setTimeout(function () {
-                        window.location = "dashboards.html";
+                        window.location = "bem-vindo.html";
                     }, 1000);
 
                 } else {
