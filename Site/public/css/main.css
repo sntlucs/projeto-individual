@@ -10,6 +10,10 @@ main {
     color: var(--corTexto);
 }
 
+.section_pagina p {
+    text-align: center;
+}
+
 #home {
     display: flex;
     margin-top: 0;
@@ -83,7 +87,7 @@ main {
 }
 
 .iconConteudo {
-    width: 40%;
+    width: 70%;
 }
 
 .texto_marrom {
@@ -122,6 +126,10 @@ main {
     display: flex;
 }
 
+#oqRPG p {
+    text-align: start;
+}
+
 #section_dados {
     display: flex;
 }
@@ -131,6 +139,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-top: 0rem;
+    margin: 40px;
 }
 
 .texto_pequeno {
