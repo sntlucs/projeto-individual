@@ -44,7 +44,7 @@ main {
 
 .section_botao {
     display: flex;
-    justify-content: center; /* Botões centralizados */
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
@@ -91,7 +91,7 @@ main {
 }
 
 #conteudo .container {
-    padding-top: 4rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +106,7 @@ main {
 .section_conteudos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 2rem 0;
+    
 }
 
 .conteudos {
@@ -351,7 +351,11 @@ button .iconeTabela {
     justify-content: center;
     gap: 2rem;
     min-height: 90vh;
-    padding: 4rem 0;
+    padding: 1rem 0;
+}
+
+.section_sistemas .titulo {
+    padding-bottom: 0rem;
 }
 
 .grid-sistemas {
@@ -423,7 +427,12 @@ button .iconeTabela {
     justify-content: center;
     gap: 2rem;
     min-height: 90vh;
-    padding: 4rem 0;
+    padding: 1rem 0;
+}
+
+.section_ferramentas .titulo {
+    padding-top: 0rem;
+    padding-bottom: 0rem;
 }
 
 .grid-ferramentas {
@@ -443,7 +452,7 @@ button .iconeTabela {
 
 .ferramenta img {
     width: 100%;
-    max-width: 280px;
+    max-width: 250px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -475,8 +484,8 @@ button .iconeTabela {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
-  padding: 0 6rem;
+  gap: 2rem;
+  padding: 0 15vh;
   width: 100%;
   max-width: 100%;
   min-height: 90vh;
@@ -487,8 +496,9 @@ button .iconeTabela {
 }
 
 .imagem-personagem {
-  width: 45vh;
-  max-width: 100%;
+  width: 55vh;
+  padding-right: 0rem;
+  margin-right: 0rem;
   flex-shrink: 0;
 }
 

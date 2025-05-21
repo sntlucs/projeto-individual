@@ -1,5 +1,4 @@
 function entrar() {
-        // aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
@@ -7,7 +6,7 @@ function entrar() {
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            // finalizarAguardar();
+            
             return false;
         }
 
@@ -49,8 +48,7 @@ function entrar() {
                     console.log("Houve um erro ao tentar realizar o login!");
 
                     resposta.text().then(texto => {
-                        // console.error(texto);
-                        // finalizarAguardar(texto);
+                        
                     });
                 }
 
