@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,88 +12,34 @@
     <link rel="stylesheet" href="../css/grafico.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-    <header class="escuro">
+        <header class="escuro">
         <section class="container">
-
-            <nav class="menu">
-                <input type="checkbox" name="chk_hamburguer" id="chk_hamburguer" class="check_hamburguer">
-
-                <section class="hamburguer">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </section>
-                <ul>
-                    <li>
-                        <a href="dashboards.html"> Painel </a>
-                    </li>
-                    <li>
-                        <a href="funcionarios.html"> Funcionários </a>
-                    </li>
-                    <li>
-                        <a href="modelos.html"> Modelos </a>
-                    </li>
-                    <li>
-                        <a href="carros.html"> Carros </a>
-                    </li>
-                    <li>
-                        <a href="../index.html"> Sair </a>
-                    </li>
-                </ul>
-            </nav>
-            <section class="secao_logo">
-                <a href="dashboards.html">
+            <section id="header_logo">
+                <a href="bem-vindo.html">
                     <img class="logo" src="../img/logo/Logo.png" alt="Logo do Site">
                 </a>
+                
             </section>
 
-            <span></span>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="bem-vindo.html">Home</a></li>
+                    <li><a href="dashboards.html">Dashboards</a></li>
+                    <li><a href="personagem.html">Gerenciador de Personagens</a></li>
+                    <li><a href="rpg.html">RPG de Mesa</a></li>
+                    <li><a href="dado.html">Gerador de Dados</a></li>
+                    
+                </ul>
+            </nav>
         </section>
     </header>
-
-    <main class="escuro">
-        <section class="form">
-            <label for="tipo_grafico"> Selecione o tipo de gráfico </label>
-            <select name="tipo_grafico" id="tipo_grafico">
-                <option value="pizza"> Pizza </option>
-                <option value="linha"> Linha </option>
-                <option value="barra"> Barra </option>
-
-            </select>
-
-            <button onclick="alterarTipoGrafico()"> Alterar Tipo de Gráfico </button>
-        </section>
-
-        <section class="graficos">
-            <section class="grafico">
-                <section class="kpis">
-                    <section class="indicador">
-                        <h3> Total de veículos modelo X </h3>
-                        <p class="indice"> 60 </p>
-                    </section>
-                    <section class="indicador">
-                        <h3> Classificação em relação ao nível de gasto do veículo Y </h3>
-                        <p class="indice"> #8 </p>
-                    </section>
-                    <section class="indicador">
-                        <h3> Gasto mais alto </h3>
-                        <p class="indice"> 1° de Maio de 2025 </p>
-                    </section>
-                </section>
-                <section class="tamanho">
-                    <canvas id="dashboard"></canvas>
-                </section>
-            </section>
-        </section>
-    </main>
-
-    <footer class="escuro">
-        <p></p>
-    </footer>
 </body>
-
-<script src="../js/graficos.js"></script>
-
 </html>
