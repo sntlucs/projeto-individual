@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +13,15 @@
     <link rel="stylesheet" href="../css/grafico.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-        <header class="escuro">
+    <header class="escuro">
         <section class="container">
             <section id="header_logo">
                 <a href="bem-vindo.html">
                     <img class="logo" src="../img/logo/Logo.png" alt="Logo do Site">
                 </a>
-                
+
             </section>
 
             <input type="checkbox" id="menu-toggle" class="menu-toggle" />
@@ -32,14 +34,68 @@
             <nav class="menu">
                 <ul>
                     <li><a href="bem-vindo.html">Home</a></li>
-                    <li><a href="dashboards.html">Dashboards</a></li>
                     <li><a href="personagem.html">Gerenciador de Personagens</a></li>
                     <li><a href="rpg.html">RPG de Mesa</a></li>
                     <li><a href="dado.html">Gerador de Dados</a></li>
-                    
+                    <li><a href="erpg.html">RPG Eletrônico</a></li>
                 </ul>
             </nav>
         </section>
     </header>
+
+    <main>
+        <section class="section_pagina claro centralizado">
+            <section class="container">
+                <h1 class="titulo">Dashboards: Benefícios do RPG</h1>
+                <p class="texto_marrom">Explore como o RPG de mesa impacta criatividade, habilidades sociais e bem-estar.</p>
+            </section>
+        </section>
+
+        <section class="section_pagina escuro">
+            <section class="container" style="display: flex; flex-direction: column; gap: 5rem;">
+                <section>
+                    <h2 class="titulo">1. Benefícios mais relatados pelos jogadores</h2>
+                    <canvas id="graficoBeneficios"></canvas>
+                </section>
+
+                <section>
+                    <h2 class="titulo">2. Habilidades cognitivas desenvolvidas</h2>
+                    <canvas id="graficoCognitivas"></canvas>
+                </section>
+
+                <section>
+                    <h2 class="titulo">3. Gêneros de RPG preferidos</h2>
+                    <canvas id="graficoGeneros"></canvas>
+                </section>
+
+                <section>
+                    <h2 class="titulo">4. Evolução da popularidade do RPG</h2>
+                    <canvas id="graficoPopularidade"></canvas>
+                </section>
+
+                <section>
+                    <h2 class="titulo">5. Habilidades sociais: jogadores vs não jogadores</h2>
+                    <canvas id="graficoComparativo"></canvas>
+                </section>
+
+                <section>
+                    <h2 class="titulo">6. Onde o RPG é aplicado</h2>
+                    <canvas id="graficoAplicacoes"></canvas>
+                </section>
+
+                <section>
+                    <h2 class="titulo">7. Frequência de jogo vs bem-estar</h2>
+                    <canvas id="graficoDispersao"></canvas>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <footer class="escuro">
+        <p>Made by Lucas Rodrigues.</p>
+    </footer>
+
 </body>
+<script src="../js/graficos.js"></script>
+
 </html>

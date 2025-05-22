@@ -1,237 +1,125 @@
-const labelsDias = [
-    '01/05',
-    '02/05',
-    '03/05',
-    '04/05',
-    '05/05',
-    '06/05',
-    '07/05',
-    // 'Julho',
-    // 'Agosto',
-    // 'Setembro',
-    // 'Outubro',
-    // 'Novembro',
-    // 'Dezembro'
-];
+    // 1. Benefícios mais relatados
+    new Chart(document.getElementById('graficoBeneficios'), {
+      type: 'bar',
+      data: {
+        labels: ['Criatividade', 'Habilidades sociais', 'Redução da ansiedade', 'Resolução de problemas', 'Inteligência emocional'],
+        datasets: [{
+          label: '% de jogadores',
+          data: [82, 76, 64, 71, 59],
+          backgroundColor: 'rgba(75, 192, 192, 0.6)'
+        }]
+      },
+      options: { responsive: true, plugins: { legend: { display: false } } }
+    });
 
-const labelsHorario = [
-    '07:00',
-    '07:30',
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    // '10:00',
-    // '10:30',
-    // '11:00',
-    // '11:30',
-    // '12:00',
-    // '12:30',
-];
+    // 2. Habilidades cognitivas (radar)
+    new Chart(document.getElementById('graficoCognitivas'), {
+      type: 'radar',
+      data: {
+        labels: ['Atenção', 'Memória', 'Raciocínio lógico', 'Linguagem', 'Imaginação'],
+        datasets: [{
+          label: 'Desenvolvimento Cognitivo',
+          data: [8, 7, 9, 8, 10],
+          backgroundColor: 'rgba(153, 102, 255, 0.2)',
+          borderColor: 'rgba(153, 102, 255, 1)',
+          pointBackgroundColor: 'rgba(153, 102, 255, 1)'
+        }]
+      },
+      options: { responsive: true }
+    });
 
-const labelsAlerta = [
-    'Nível 1 (Excesso de Óleo)',
-    'Nível 2 (Falta de Óleo)',
-    'Nível 3 (Crítico de falta de Óleo)',
-    'Sem alerta'
-];
+    // 3. Gêneros de RPG
+    new Chart(document.getElementById('graficoGeneros'), {
+      type: 'pie',
+      data: {
+        labels: ['Fantasia medieval', 'Cyberpunk', 'Terror psicológico', 'Sci-Fi', 'Super-heróis'],
+        datasets: [{
+          data: [30, 20, 15, 20, 15],
+          backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe', '#ffce56', '#4bc0c0']
+        }]
+      },
+      options: { responsive: true }
+    });
 
-const dataLinhas = {
-    labels: labelsDias,
-    datasets: [{
-            label: 'Veiculo Y',
-            backgroundColor: 'rgb(54, 162, 235)',
-            borderColor: 'rgb(54, 162, 235)',
-            data: [75, 68, 64, 61, 59, 55, 54]
-        }, 
-        {
-            label: 'Média modelo X',
-            backgroundColor: 'rgb(255, 205, 86)',
-            borderColor: 'rgb(255, 205, 86)',
-            data: [75, 71, 68, 65, 61, 59, 56]
-        }
-    ]
-};
+    // 4. Popularidade ao longo do tempo
+    new Chart(document.getElementById('graficoPopularidade'), {
+      type: 'line',
+      data: {
+        labels: ['2015', '2017', '2019', '2021', '2023'],
+        datasets: [{
+          label: 'Interesse (%)',
+          data: [35, 50, 65, 78, 90],
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          fill: true
+        }]
+      },
+      options: { responsive: true }
+    });
 
-const dataBarras = {
-    labels: labelsDias,
-    datasets: [{
-            label: 'Veiculo Y',
-            backgroundColor: 'rgb(255, 205, 86)',
-            borderColor: 'rgb(255, 205, 86)',
-            data: [75, 68, 64, 61, 59, 55, 53]
-        }, 
-    ]
-};
+    // 5. Comparativo jogadores vs não jogadores
+    new Chart(document.getElementById('graficoComparativo'), {
+      type: 'bar',
+      data: {
+        labels: ['Jogadores', 'Não jogadores'],
+        datasets: [{
+          label: 'Habilidades sociais (0-10)',
+          data: [8.4, 6.2],
+          backgroundColor: ['#36a2eb', '#ff6384']
+        }]
+      },
+      options: { responsive: true }
+    });
 
-const dataPizza = {
-    labels: labelsAlerta,
-    datasets: [{
-            label: 'Veiculos',
-            backgroundColor: [
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)',
-                'rgb(255, 99, 132)',
-                'rgb(54, 205, 86)'
-            ],
-            data: [20, 10, 3, 8]
-        }, 
-    ]
-};
+    // 6. Aplicações do RPG
+    new Chart(document.getElementById('graficoAplicacoes'), {
+      type: 'bar',
+      data: {
+        labels: ['Educação básica', 'Terapia', 'Ensino superior', 'Treinamento corporativo', 'Lazer'],
+        datasets: [{
+          label: 'Presença em contextos (%)',
+          data: [70, 60, 65, 40, 85],
+          backgroundColor: 'rgba(255, 206, 86, 0.6)'
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: 'y'
+      }
+    });
 
-Chart.defaults.color = '#ffffff';
-Chart.defaults.font.size = 16;
-
-let config = {
-    type: 'pie',
-    data: dataPizza,
-    options: {
-        plugins: {
+    // 7. Dispersão: frequência vs bem-estar
+    new Chart(document.getElementById('graficoDispersao'), {
+      type: 'scatter',
+      data: {
+        datasets: [{
+          label: 'Sessões por mês x Bem-estar',
+          data: [
+            {x: 1, y: 5},
+            {x: 2, y: 6},
+            {x: 4, y: 7.5},
+            {x: 6, y: 8.2},
+            {x: 8, y: 9},
+            {x: 10, y: 9.3}
+          ],
+          backgroundColor: 'rgba(54, 162, 235, 0.8)'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
             title: {
-                display: true,
-                text: 'Índice de alertas dos veículos em um mês',
-                font: {
-                    size: 28
-                },
-                padding: {
-                    top: 16,
-                    bottom: 16
-                } 
+              display: true,
+              text: 'Sessões de RPG por mês'
             }
-        }
-    }
-}
-
-const dashboard = document.getElementById('dashboard');
-const kpis = document.querySelector('.kpis');
-const secaoTamanho = document.querySelector('.tamanho');
-
-const indicadoresLinha = `<section class="indicador"> 
-                        <h3> Total de veículos modelo X </h3>
-                        <p class="indice"> 60 </p>
-                        </section>
-                        <section class="indicador">
-                            <h3> Classificação em relação ao nível de gasto do veículo Y </h3>
-                            <p class="indice"> #8 </p>
-                        </section>
-                        <section class="indicador">
-                            <h3> Gasto mais alto </h3>
-                            <p class="indice"> 7% - 1° de Maio de 2025 </p>
-                        </section>`;
-
-const indicadoresBarra = `<section class="indicador"> 
-                        <h3> Total de veículos modelo X </h3>
-                        <p class="indice"> 60 </p>
-                        </section>
-                        <section class="indicador">
-                            <h3> Classificação em relação ao nível de gasto do veículo Y </h3>
-                            <p class="indice"> #8 </p>
-                        </section>
-                        <section class="indicador">
-                            <h3> Gasto mais alto </h3>
-                            <p class="indice"> 7% - 1° de Maio de 2025 </p>
-                        </section>`;
-
-const indicadoresPizza = `<section class="indicador"> 
-                        <h3> Total de alertas </h3>
-                        <p class="indice"> 33 </p>
-                        </section>
-                        <section class="indicador">
-                            <h3> Modelo com mais alertas </h3>
-                            <p class="indice"> Modelo X </p>
-                        </section>
-                        <section class="indicador">
-                            <h3> Alerta mais emitido</h3>
-                            <p class="indice"> Nível 1 </p>
-                        </section>`;
-
-let grafico = new Chart(
-    dashboard,
-    config
-);
-
-function alterarTipoGrafico() {
-    let tipoGrafico = document.getElementById('tipo_grafico').value;
-
-    if (tipoGrafico == 'linha') {
-        config = {
-            type: 'line',
-            data: dataLinhas,
-            options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Porcentagem de altura do óleo dos veículos do modelo X',
-                        font: {
-                            size: 28
-                        },
-                        padding: {
-                            top: 16,
-                            bottom: 16
-                        } 
-                    }
-                }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Nota de bem-estar (0 a 10)'
             }
+          }
         }
-
-        secaoTamanho.style.width = "100%";
-
-        kpis.innerHTML = indicadoresLinha;
-    } else if (tipoGrafico == 'barra') {
-        config = {
-            type: 'bar',
-            data: dataBarras,
-            options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Porcentagem de altura do óleo do veículo Y',
-                        font: {
-                            size: 28
-                        },
-                        padding: {
-                            top: 16,
-                            bottom: 16
-                        } 
-                    }
-                }
-            }
-        }
-
-        secaoTamanho.style.width = "100%";
-        kpis.innerHTML = indicadoresBarra;
-    } else {
-
-        config = {
-            type: 'pie',
-            data: dataPizza,
-            options: {
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Índice de alertas dos veículos em um mês',
-                        font: {
-                            size: 28
-                        },
-                        padding: {
-                            top: 16,
-                            bottom: 16
-                        } 
-                    }
-                }
-            }
-        }
-
-        
-        secaoTamanho.style.width = "40%";
-        kpis.innerHTML = indicadoresPizza;
-    }
-
-    grafico.destroy();
-
-    grafico = new Chart(
-        dashboard,
-        config
-    );
-}
+      }
+    });
