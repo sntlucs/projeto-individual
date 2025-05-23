@@ -10,10 +10,6 @@ main {
     color: var(--corTexto);
 }
 
-.section_pagina p {
-    text-align: center;
-}
-
 #home {
     display: flex;
     margin-top: 0;

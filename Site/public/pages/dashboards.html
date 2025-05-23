@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dashboards - CodeX </title>
@@ -44,45 +47,51 @@
     </header>
 
     <main>
-        <section class="section_pagina claro centralizado">
+        <section class="section_pagina escuro centralizado">
             <section class="container">
                 <section class="section_textos">
                     <h1 class="titulo">Dashboards: Benefícios do RPG</h1>
-                    <p class="texto_marrom">Explore como o RPG de mesa impacta criatividade, habilidades sociais e bem-estar.</p>
+                    <p class="texto_marrom">Explore como o RPG de mesa impacta criatividade, habilidades sociais e
+                        bem-estar.</p>
                 </section>
             </section>
         </section>
 
         <section class="section_pagina claro">
             <section class="container_graficos">
-                <section>
-                    <h2 class="titulo">1. Benefícios mais relatados pelos jogadores</h2>
-                    <canvas id="graficoBeneficios"></canvas>
+                <section class="grid">
+                    <section>
+                        <h2 class="titulo">1. Benefícios mais relatados pelos jogadores</h2>
+                        <canvas id="graficoBeneficios"></canvas>
+                    </section>
+                    <section>
+                        <h2 class="titulo">2. Habilidades cognitivas desenvolvidas</h2>
+                        <canvas id="graficoCognitivas"></canvas>
+                    </section>
                 </section>
 
-                <section>
-                    <h2 class="titulo">2. Habilidades cognitivas desenvolvidas</h2>
-                    <canvas id="graficoCognitivas"></canvas>
+                <section class="grid">
+                    <section>
+                        <h2 class="titulo">3. Gêneros de RPG preferidos</h2>
+                        <canvas id="graficoGeneros"></canvas>
+                    </section>
+    
+                    <section>
+                        <h2 class="titulo">4. Evolução da popularidade do RPG</h2>
+                        <canvas id="graficoPopularidade"></canvas>
+                    </section>
                 </section>
 
-                <section>
-                    <h2 class="titulo">3. Gêneros de RPG preferidos</h2>
-                    <canvas id="graficoGeneros"></canvas>
-                </section>
-
-                <section>
-                    <h2 class="titulo">4. Evolução da popularidade do RPG</h2>
-                    <canvas id="graficoPopularidade"></canvas>
-                </section>
-
-                <section>
-                    <h2 class="titulo">5. Habilidades sociais: jogadores vs não jogadores</h2>
-                    <canvas id="graficoComparativo"></canvas>
-                </section>
-
-                <section>
-                    <h2 class="titulo">6. Onde o RPG é aplicado</h2>
-                    <canvas id="graficoAplicacoes"></canvas>
+                <section class="grid">
+                    <section>
+                        <h2 class="titulo">5. Habilidades sociais: jogadores vs não jogadores</h2>
+                        <canvas id="graficoComparativo"></canvas>
+                    </section>
+    
+                    <section>
+                        <h2 class="titulo">6. Onde o RPG é aplicado</h2>
+                        <canvas id="graficoAplicacoes"></canvas>
+                    </section>
                 </section>
 
                 <section>
