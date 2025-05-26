@@ -37,7 +37,7 @@ new Chart(document.getElementById('graficoCognitivas'), {
 
 // 3. Gêneros de RPG
 new Chart(document.getElementById('graficoGeneros'), {
-  type: 'pie',
+  type: 'doughnut',
   data: {
     labels: ['Fantasia medieval', 'Cyberpunk', 'Terror psicológico', 'Sci-Fi', 'Super-heróis'],
     datasets: [{

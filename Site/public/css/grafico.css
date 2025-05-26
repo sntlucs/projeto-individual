@@ -1,34 +1,87 @@
+/* Canvas - Gráficos */
 canvas {
-  max-width: 100vh;
-  min-width: 50vh;
-  margin: 2rem auto;
-  display: block; 
+    width: 100% !important;
+    max-width: 500px; 
+    min-width: 450px;
+    height: auto !important;
+    margin: 0 auto;
+    display: block;
 }
 
-h2 {
-  text-align: center;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 4rem;
+    justify-items: center;
+    align-items: center;
 }
 
-.container-graficos {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
+.section_pagina {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+}
+
+.container_graficos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 4rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
 }
 
 .tituloGrafico {
-  font-family: "Tagesschrift";
-  font-size: 2rem;
-  text-align: center;
+    font-family: "Tagesschrift";
+    font-size: 2rem;
+    text-align: center;
 }
 
-#graficoBeneficios {
-  color: white;
+.legenda {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--corTexto);
+    max-width: 400px;
+    margin: 1rem auto 0 auto;
+    line-height: 1.5;
+}
+
+#graficoCognitivas {
+    max-width: 450px !important;
+    min-width: 400px;
+}
+
+#graficoGeneros {
+    max-width: 420px !important;
+    min-width: 400px;
+}
+
+.graficoDispersao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .section_pagina_graficos {
-  scroll-margin-top: 4rem;
-  min-height: 90vh;
-  background-color: var(--corFundoBody);
-  color: var(--corTexto);
-  padding-top: 4rem;
+    scroll-margin-top: 4rem;
+    min-height: 90vh;
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+    padding: 4rem 2rem;
+}
+
+.legenda a {
+    color: var(--corTexto);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.legenda a:hover {
+    color: purple; 
+    cursor: pointer;
 }

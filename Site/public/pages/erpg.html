@@ -23,7 +23,7 @@
                 <a href="bem-vindo.html">
                     <img class="logo" src="../img/logo/Logo.png" alt="Logo do Site">
                 </a>
-                
+
             </section>
 
             <input type="checkbox" id="menu-toggle" class="menu-toggle" />
@@ -40,14 +40,20 @@
                     <li><a href="personagem.html">Gerenciador de Personagens</a></li>
                     <li><a href="rpg.html">RPG de Mesa</a></li>
                     <li><a href="dado.html">Gerador de Dados</a></li>
-                    
+
                 </ul>
             </nav>
         </section>
     </header>
 
     <main>
-        <section class="escuro section_pagina centralizado">
+        <section class=" section_pagina centralizado video-bg-section">
+            <div class="video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="../img/conteudos/videoFundoBlasphemous.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo em HTML5.
+                </video>
+            </div>
             <section class="container">
                 <h1 class="titulo">RPGs Eletrônicos</h1>
                 <p>
@@ -64,7 +70,7 @@
                 <p>Conheça três jogos populares com diferentes estilos:</p>
                 <section class="grid-sistemas">
                     <div class="sistema">
-                        <img src="../img/conteudos/cyberpunkLivro.jpg" alt="Cyberpunk 2020" class="imagem_rpgs">
+                        <img src="../img/fundo/theWitcher.webp" alt="Cyberpunk 2020" class="imagem_erpg">
                         <ul>
                             <li><strong>The Witcher III</strong></li>
                             <li>Medieval, Mitologia, História.</li>
@@ -72,15 +78,15 @@
                         </ul>
                     </div>
                     <div class="sistema">
-                        <img src="../img/conteudos/dndLivro.jpeg" alt="D&D" class="imagem_rpgs">
+                        <img src="../img/fundo/baldursGate.png" alt="D&D" class="imagem_erpg">
                         <ul>
                             <li><strong>Baldur's Gate III</strong></li>
                             <li>Fantasia medieval, Magia, Criaturas Místicas.</li>
-                            <li>RPG de Turnos com foco em estratégia.</li>
+                            <li>RPG de Computador que simula um RPG de Mesa.</li>
                         </ul>
                     </div>
                     <div class="sistema">
-                        <img src="../img/conteudos/cthulhu.jpg" alt="Call of Cthulhu" class="imagem_rpgs">
+                        <img src="../img/fundo/Final_Fantasy_VII.png" alt="Call of Cthulhu" class="imagem_erpg">
                         <ul>
                             <li><strong>Final Fantasy VII</strong></li>
                             <li>Retrofuturismo, Steampunk, Magia.</li>
@@ -95,10 +101,21 @@
             <section class="container como-jogar-container">
                 <div class="texto-como-jogar">
                     <h1 class="titulo">Diferença entre RPGs Ocidentais e Orientais</h1>
-                    <p>Crie um personagem e viva aventuras com outros jogadores guiados por um mestre de jogo.</p>
-                    <p>Use sua imaginação para descrever ações e deixe os dados decidirem o destino!</p>
+                    <p> Os RPGs Ocidentais (WRPGs) e Orientais (JRPGs) apresentam diferenças marcantes na forma como são
+                        desenvolvidos e jogados. Os RPGs Ocidentais, geralmente produzidos na Europa e América,
+                        priorizam a liberdade do jogador, com mundos abertos, decisões que afetam a história e grande
+                        personalização de personagens. Exemplos são The Witcher e Skyrim.<br>
+
+                        Já os RPGs Orientais, principalmente japoneses, costumam ter histórias mais lineares e focadas
+                        em narrativas emocionantes, com personagens pré-definidos e estéticas mais estilizadas, muitas
+                        vezes inspiradas em animes e mangás. São exemplos Final Fantasy e Persona.<br>
+
+                        Em resumo, enquanto os RPGs Ocidentais destacam a liberdade e escolhas, os Orientais priorizam a
+                        narrativa, os personagens e a estética.
+
+                    </p>
                 </div>
-                <img src="../img/fundo/aventura_rpg.jpg" alt="Imagem Como Jogar" class="img-como-jogar">
+                <img src="../img/fundo/rpgs nds.jpg" alt="Imagem Como Jogar" class="img-como-jogar">
             </section>
         </section>
 
@@ -133,5 +150,10 @@
         }
     </script>
 </body>
+
+<script>
+    const video = document.getElementById('bgVideo');
+    video.playbackRate = 0.6; // Slow motion leve
+</script>
 
 </html>

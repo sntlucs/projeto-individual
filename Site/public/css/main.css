@@ -306,9 +306,9 @@ button .iconeTabela {
 .alinhado-direita .container {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: right;
-    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
 }
 
 .alinhado-esquerda .container {
@@ -478,13 +478,10 @@ button .iconeTabela {
 }
 
 .imagem_rpg {
-    width: 55vh;
-    margin-left: 20vh;
-    margin-top: 7vh;
+    width: 65vh;
+    margin: 0;
     border-radius: 8px;
-    margin-right: 4rem;
 }
-
 .personagem-grid {
   display: flex;
   flex-direction: row;
@@ -514,4 +511,93 @@ button .iconeTabela {
     margin-top: 7vh;
     border-radius: 8px;
     margin-right: 2rem;
+}
+
+.como-jogar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    text-align: left;
+    min-height: 90vh;
+}
+
+.texto-como-jogar {
+    max-width: 600px;
+}
+
+.img-como-jogar {
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para a section com vídeo */
+.video-bg-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.05); 
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(0.5);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.video-bg video {
+    box-sizing: border-box;
+}
+
+.video-bg video {
+    clip-path: inset(0 0 0 0px);
+}
+/* Mantém o conteúdo da section acima do vídeo */
+.video-bg-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.video-bg-section .titulo, 
+.video-bg-section p {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.section_pagina.alinhado-direita .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    gap: 4rem;
+}
+
+.imagem_rpg {
+    width: 75vh;
+    height: auto;
+    margin: 0;
+    border-radius: 8px;
+    object-fit: contain;
 }
