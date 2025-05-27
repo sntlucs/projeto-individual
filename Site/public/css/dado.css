@@ -69,11 +69,10 @@ main {
 
 /* Entrada de dados */
 .escolher-dado {
-    margin-bottom: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .titulo {
@@ -123,12 +122,34 @@ main {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* REAJUSTE para a section da página de dados */
+.grupo-modificador {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
 
+.grupo-input {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
 
+input.qtd-dados {
+    width: 180px;
+}
+
+input.modificador {
+    width: 60px;
+}
+
+.label-modificador {
+    margin-right: 0.5rem;
+    align-self: center;
+}

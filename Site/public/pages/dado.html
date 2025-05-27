@@ -7,13 +7,14 @@
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rolador de Dados - CodeX</title>
   <link rel="shortcut icon" href="../img/logo/Logo.png" type="image/x-icon">
   <link rel="stylesheet" href="../css/body.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/dado.css">
   <link rel="stylesheet" href="../css/footer.css">
-  <title>Rolador de Dados - CodeX</title>
 </head>
+
 <body class="pagina-dado">
   <header class="escuro">
     <section class="container">
@@ -41,7 +42,6 @@
     </section>
   </header>
 
-
   <main>
     <section class="section_pagina claro dado">
       <section class="container">
@@ -62,7 +62,19 @@
               </select>
 
               <label>Quantidade:</label>
-              <input type="number" class="qtd-dados" min="1" value="1" />
+              <input type="number" class="qtd-dados" min="1" value="1">
+
+              <div class="grupo-modificador">
+                <label>Modificador:</label>
+                <input type="number" class="modificador" value="0">
+              </div>
+
+              <label>Tipo:</label>
+              <select class="tipo-rolagem">
+                <option value="normal">Normal</option>
+                <option value="vantagem">Vantagem</option>
+                <option value="desvantagem">Desvantagem</option>
+              </select>
             </div>
           </div>
 
@@ -73,7 +85,6 @@
 
           <div id="result"></div>
         </section>
-
       </section>
     </section>
   </main>
@@ -81,6 +92,7 @@
   <footer class="escuro">
     <p>Made by Lucas Rodrigues.</p>
   </footer>
+
   <script src="../js/dado.js"></script>
 </body>
 
