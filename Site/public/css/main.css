@@ -33,6 +33,10 @@ main {
     color: #ffffff;
 }
 
+.section_conteudos li {
+    text-align: start;
+}
+
 .section_textos {
     display: flex;
     flex-direction: column;
@@ -60,6 +64,7 @@ main {
 
 .img_fundo {
     width: 50vh;
+    margin-left: 5rem;
 }
 
 .img_fundo_home {
@@ -97,6 +102,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    padding-right: 15rem;
 }
 
 #conteudo p {
@@ -120,6 +126,7 @@ main {
 
 #oqeRPG .container {
     display: flex;
+    padding-left: 15rem;
 }
 
 #oqRPG p {
@@ -149,7 +156,6 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
-/* Tabelas */
 table {
     width: 75%;
     background-color: var(--corTextoForm);
@@ -257,10 +263,23 @@ button .iconeTabela {
 }
 
 .botao.main {
-    font-size: 1.3rem;
-    border-radius: 0.2rem;
-    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 0.8rem 1.8rem;
+    border-radius: 0.5rem;
     border: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.botao.main:hover {
+    background-color: #1f1e22;
+    transform: scale(1.05);
+    color: white;
 }
 
 #oqRPG {
@@ -537,29 +556,12 @@ button .iconeTabela {
 .video-bg-section {
     position: relative;
     overflow: hidden;
-}
-
-.video-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.video-bg video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.05); 
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    filter: blur(8px) brightness(0.5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
 }
 
 body {
@@ -573,7 +575,7 @@ body {
 .video-bg video {
     clip-path: inset(0 0 0 0px);
 }
-/* Mantém o conteúdo da section acima do vídeo */
+
 .video-bg-section .container {
     position: relative;
     z-index: 1;
@@ -600,4 +602,73 @@ body {
     margin: 0;
     border-radius: 8px;
     object-fit: contain;
+}
+
+.section_pagina.escuro .container {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 4rem;
+    padding-left: 20vh;
+}
+
+.section_textos {
+    max-width: 600px;
+}
+
+.video-bg-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.video-bg-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1;
+    color: white;
+}
+
+.video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(1.05);
+    object-fit: cover;
+    filter: blur(8px) brightness(0.5);
+}
+
+.texto_home {
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.section_botao {
+    margin-top: 1rem;
+}
+
+.section_pagina.centralizado .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 90vh;
+    gap: 2rem;
 }
