@@ -50,7 +50,7 @@
                 </video>
             </div>
             <section class="container">
-                <h1 class="titulo">Bem-vindo(a) ao CodeX!</h1>
+                <div id="div_bem_vindo"></div>
                 <p class="texto">Aqui você encontrará diversos conteúdos sobre o mundo do RPG!!<br>
                     Antes de mergulhar neste mundo, recomendamos que explore pesquisas e dados que comprovam <br>
                     como o RPG pode melhorar habilidades cognitivas, sociais e emocionais.</p>
@@ -123,12 +123,9 @@
     <footer class="escuro">
         <p>Made by Lucas Rodrigues.</p>
     </footer>
-
-    <script src="../index.js"></script>
-
     <script>
-        const video = document.getElementById('bgVideo');
-        video.playbackRate = 0.6;
+        var nome = sessionStorage.NOME_USUARIO;
+        div_bem_vindo.innerHTML = `<h1 class="titulo">Bem vindo(a) ${nome}!</h1>`;
     </script>
 </body>
 
