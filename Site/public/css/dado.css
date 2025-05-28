@@ -169,7 +169,5 @@ input.modificador {
 }
 
 .botao.main:hover {
-    background-color: #1f1e22;
     transform: scale(1.05);
-    color: white;
 }
