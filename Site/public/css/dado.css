@@ -55,7 +55,7 @@ main {
 
 /* Caixa cinza */
 .caixa-dados {
-    background-color: var(--corFundoBody);
+    background-color: var(--corFundo);
     padding: 2rem;
     border-radius: 0.8rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -152,4 +152,24 @@ input.modificador {
 .label-modificador {
     margin-right: 0.5rem;
     align-self: center;
+}
+
+.botao.main {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 0.8rem 1.8rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+.botao.main:hover {
+    background-color: #1f1e22;
+    transform: scale(1.05);
+    color: white;
 }
