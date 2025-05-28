@@ -1,14 +1,11 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const controller = require("../controllers/personagem");
 
-var personagemController = require("../controllers/personagemController");
-
-router.post("/cadastrar", function (req, res) {
-    personagemController.cadastrarPersonagem(req, res);
-});
-
-router.get("/listar", function (req, res) {
-    personagemController.listarPersonagem(req, res);
-});
+router.post("/", controller.criarPersonagem);
+router.get("/", controller.listarPersonagens);
+router.get("/:id", controller.buscarPersonagemPorId);
+router.put("/:id", controller.atualizarPersonagem);
+router.delete("/:id", controller.deletarPersonagem);
 
 module.exports = router;

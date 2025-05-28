@@ -1,50 +1,50 @@
-var personagemModel = require('../models/personagemModel');
+const personagemModel = require("../models/personagemModel");
 
-function cadastrarPersonagem(req, res) {
-    var nome = req.body.nomeServer;
-    var origem = req.body.origemServer;
-    var classe = req.body.classeServer;
-    var nivel = req.body.nivelServer;
-
-    // Validações individuais
-    if (nome == undefined) {
-        res.status(400).send("O nome está undefined!");
-    } else if (origem == undefined) {
-        res.status(400).send("A origem está undefined!");
-    } else if (classe == undefined) {
-        res.status(400).send("A classe está undefined!");
-    } else if (nivel == undefined) {
-        res.status(400).send("O nivel está undefined!");
-    } else {
-        funcionarioModel.cadastrarPersonagem(nome, origem, classe, nivel)
-            .then(function (resultado) {
-                res.json(resultado);
-            })
-            .catch(function (erro) {
-                console.log(erro);
-                console.log("\nHouve um erro ao cadastrar o funcionário! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            });
-    }
+function listar(req, res) {
+    personagemModel.listar((erro, resultados) => {
+        if (erro) return res.status(500).json(erro);
+        res.json(resultados);
+    });
 }
 
-function listarPersonagem(req, res) {
-    personagemModel.listarPersonagem()
-        .then(function (resultado) {
-            if (resultado.length > 0) {
-                res.status(200).json(resultado);
-            } else {
-                res.status(204).send("Nenhum personagem encontrado!");
-            }
-        })
-        .catch(function (erro) {
-            console.log(erro);
-            console.log("\nHouve um erro ao listar os personagens! Erro: ", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        });
+function buscarPorId(req, res) {
+    const id = req.params.id;
+    personagemModel.buscarPorId(id, (erro, resultado) => {
+        if (erro) return res.status(500).json(erro);
+        if (!resultado) return res.status(404).json({ mensagem: "Personagem não encontrado" });
+        res.json(resultado);
+    });
+}
+
+function inserir(req, res) {
+    const { nome, origem, classe, nivel, id_usuario, id_campanha } = req.body;
+    personagemModel.inserir({ nome, origem, classe, nivel, id_usuario, id_campanha }, (erro, resultado) => {
+        if (erro) return res.status(500).json(erro);
+        res.status(201).json({ mensagem: "Personagem criado com sucesso!" });
+    });
+}
+
+function atualizar(req, res) {
+    const id = req.params.id;
+    const { nome, origem, classe, nivel, id_usuario, id_campanha } = req.body;
+    personagemModel.atualizar(id, { nome, origem, classe, nivel, id_usuario, id_campanha }, (erro, resultado) => {
+        if (erro) return res.status(500).json(erro);
+        res.json({ mensagem: "Personagem atualizado com sucesso!" });
+    });
+}
+
+function deletar(req, res) {
+    const id = req.params.id;
+    personagemModel.deletar(id, (erro, resultado) => {
+        if (erro) return res.status(500).json(erro);
+        res.json({ mensagem: "Personagem deletado com sucesso!" });
+    });
 }
 
 module.exports = {
-    cadastrarPersonagem,
-    listarPersonagem
+    listar,
+    buscarPorId,
+    inserir,
+    atualizar,
+    deletar
 };
