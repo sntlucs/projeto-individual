@@ -2,10 +2,16 @@
 <html lang="pt-br">
 
 <head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+    </style>
     <meta charset="UTF-8">
     <title>Cadastro de Personagem</title>
-    <link rel="stylesheet" href="css/body.css">
-    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="shortcut icon" href="../img/logo/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
@@ -29,7 +35,7 @@
 
             <label for="id_campanha">Campanha:</label>
             <select id="id_campanha" required>
-                <option value="">Selecione uma campanha</option>
+                <option value="">Carregando campanhas...</option>
             </select>
 
             <button type="submit">Salvar</button>
@@ -38,11 +44,13 @@
 
         <section id="lista-personagens">
             <h2>Personagens Cadastrados</h2>
-            <ul id="personagens"></ul>
+            <ul id="personagens">
+                <div id="lista-personagens"></div>
+            </ul>
         </section>
     </main>
 
-    <script src="js/add-personagem.js"></script>
+    <script src="../js/add-personagem.js"></script>
 </body>
 
 </html>

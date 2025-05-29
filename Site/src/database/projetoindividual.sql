@@ -17,7 +17,7 @@ create table Personagem (
     nivel int default 1,
     id_usuario int not null,
     id_campanha INT,
-    FOREIGN KEY (id_campanha) REFERENCES Campanha(id_campanha),
+    foreign key (id_campanha) references Campanha(id_campanha),
     foreign key (id_usuario) references Usuario(id_usuario)
 );
 
