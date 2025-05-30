@@ -4,9 +4,9 @@ async function listar(id_usuario) {
     const instrucao = `
         SELECT p.*, c.nome AS nomeCampanha
         FROM Personagem p
-        JOIN Campanha_Personagem cp ON cp.id_personagem = p.id_personagem
-        JOIN Campanha c ON c.id_campanha = cp.id_campanha
-        WHERE p.id_usuario = ${id_usuario};
+        JOIN Campanha_Personagem cp ON cp.fk_personagem = p.id
+        JOIN Campanha c ON c.id = cp.fk_campanha
+        WHERE p.fk_usuario = ${id_usuario};
     `;
 
     return await database.executar(instrucao);
@@ -18,9 +18,9 @@ function listarPorUsuario(id_usuario) {
     var instrucaoSql = `
         SELECT p.*, c.nome AS nomeCampanha
         FROM Personagem p
-        JOIN Campanha_Personagem cp ON p.id_personagem = cp.id_personagem
-        JOIN Campanha c ON cp.id_campanha = c.id_campanha
-        WHERE p.id_usuario = ${id_usuario};
+        JOIN Campanha_Personagem cp ON p.id = cp.fk_personagem
+        JOIN Campanha c ON cp.fk_campanha = c.id
+        WHERE p.fk_usuario = ${id_usuario};
     `;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
@@ -29,17 +29,17 @@ function listarPorUsuario(id_usuario) {
 
 function buscarPorId(id_personagem) {
     var instrucao = `
-        SELECT p.*, cp.id_campanha
+        SELECT p.*, cp.fk_campanha
         FROM Personagem p
-        LEFT JOIN Campanha_Personagem cp ON p.id_personagem = cp.id_personagem
-        WHERE p.id_personagem = ${id_personagem};
+        LEFT JOIN Campanha_Personagem cp ON p.id = cp.fk_personagem
+        WHERE p.id = ${id_personagem};
     `;
     return database.executar(instrucao);
 }
 
 function inserir(nome, origem, classe, nivel, id_usuario, id_campanha) {
     var instrucaoPersonagem = `
-        INSERT INTO Personagem (nome, origem, classe, nivel, id_usuario)
+        INSERT INTO Personagem (nome, origem, classe, nivel, fk_usuario)
         VALUES ('${nome}', '${origem}', '${classe}', ${nivel}, ${id_usuario});
     `;
 
@@ -48,7 +48,7 @@ function inserir(nome, origem, classe, nivel, id_usuario, id_campanha) {
 
 function associarCampanha(id_personagem, id_campanha) {
     var instrucaoRelacionamento = `
-        INSERT INTO Campanha_Personagem (id_campanha, id_personagem)
+        INSERT INTO Campanha_Personagem (fk_campanha, fk_personagem)
         VALUES (${id_campanha}, ${id_personagem});
     `;
     return database.executar(instrucaoRelacionamento);
@@ -58,17 +58,17 @@ async function atualizar(id_personagem, nome, origem, classe, nivel, id_usuario,
     try {
         await database.executar(`
             UPDATE Personagem
-            SET nome = '${nome}', origem = '${origem}', classe = '${classe}', nivel = ${nivel}, id_usuario = ${id_usuario}
-            WHERE id_personagem = ${id_personagem};
+            SET nome = '${nome}', origem = '${origem}', classe = '${classe}', nivel = ${nivel}, fk_usuario = ${id_usuario}
+            WHERE id = ${id_personagem};
         `);
 
         await database.executar(`
             DELETE FROM Campanha_Personagem
-            WHERE id_personagem = ${id_personagem};
+            WHERE fk_personagem = ${id_personagem};
         `);
 
         await database.executar(`
-            INSERT INTO Campanha_Personagem (id_campanha, id_personagem)
+            INSERT INTO Campanha_Personagem (fk_campanha, fk_personagem)
             VALUES (${id_campanha}, ${id_personagem});
         `);
     } catch (erro) {
@@ -79,10 +79,10 @@ async function atualizar(id_personagem, nome, origem, classe, nivel, id_usuario,
 
 function deletar(id_personagem) {
     var instrucaoRelacionamento = `
-        DELETE FROM Campanha_Personagem WHERE id_personagem = ${id_personagem};
+        DELETE FROM Campanha_Personagem WHERE fk_personagem = ${id_personagem};
     `;
     var instrucao = `
-        DELETE FROM Personagem WHERE id_personagem = ${id_personagem};
+        DELETE FROM Personagem WHERE id = ${id_personagem};
     `;
     return database.executar(instrucaoRelacionamento + instrucao);
 }

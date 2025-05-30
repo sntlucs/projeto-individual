@@ -1,38 +1,62 @@
 const form = document.getElementById("form-personagem");
 const campanhaSelect = document.getElementById("id_campanha");
 const lista = document.getElementById("personagens");
+console.log("sessionStorage.ID_USUARIO:", sessionStorage.ID_USUARIO);
 
 window.addEventListener("load", () => {
     carregarCampanhas();
-    carregarPersonagens();
 });
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const id_usuario = sessionStorage.ID_USUARIO;
+    const nome = form.nome.value.trim();
+    const origem = form.origem.value.trim();
+    const classe = form.classe.value.trim();
+    const nivel = parseInt(form.nivel.value) || 1;
+    const id_campanha = parseInt(form.id_campanha.value);
+
+    if (!id_usuario) {
+        alert("Erro: usuário não autenticado.");
+        return;
+    }
+
+    if (!nome || !classe || isNaN(id_campanha)) {
+        alert("Preencha todos os campos obrigatórios (nome, classe e campanha).");
+        return;
+    }
+
     const personagem = {
-        nome: form.nome.value || "",
-        origem: form.origem.value || "",
-        classe: form.classe.value || "",
-        nivel: parseInt(form.nivel.value) || 1,
-        id_usuario: sessionStorage.ID_USUARIO,
-        id_campanha: parseInt(form.id_campanha.value)
+        nome,
+        origem,
+        classe,
+        nivel,
+        id_usuario,
+        id_campanha
     };
+
+    console.log("Enviando personagem:", personagem);
 
     const id = form.id_personagem.value;
     const method = id ? "PUT" : "POST";
     const url = id ? `/personagem/${id}` : "/personagem";
 
     try {
-        await fetch(url, {
+        const resposta = await fetch(url, {
             method,
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(personagem)
         });
 
+        if (!resposta.ok) {
+            const erro = await resposta.text();
+            throw new Error(erro);
+        }
+
         form.reset();
         form.id_personagem.value = "";
-        carregarPersonagens();
+        carregarPersonagensDoUsuario();
     } catch (erro) {
         console.error("Erro ao salvar personagem:", erro);
         alert("Erro ao salvar personagem.");
@@ -48,7 +72,7 @@ async function carregarCampanhas() {
 
         campanhas.forEach(c => {
             const opt = document.createElement("option");
-            opt.value = c.id_campanha;
+            opt.value = c.id;
             opt.textContent = c.nome || "Sem nome";
             campanhaSelect.appendChild(opt);
         });
@@ -57,77 +81,9 @@ async function carregarCampanhas() {
     }
 }
 
-function carregarPersonagens() {
-    const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-
-    if (!usuario || !usuario.id_usuario) {
-        console.error("Usuário não está logado ou id_usuario não disponível.");
-        return;
-    }
-
-    fetch(`/personagem/usuario/${usuario.id_usuario}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const lista = document.getElementById('listaPersonagens');
-            if (!lista) {
-                console.warn("Elemento com id 'listaPersonagens' não encontrado.");
-                return;
-            }
-
-            lista.innerHTML = '';
-            data.forEach(p => {
-                const li = document.createElement('li');
-                li.textContent = `${p.nome} (${p.classe}) - Nível ${p.nivel}`;
-                lista.appendChild(li);
-            });
-        })
-        .catch(error => {
-            console.error("Erro ao carregar personagens:", error);
-        });
-}
-
-
-async function carregarPersonagens() {
-    const id_usuario = sessionStorage.getItem('id_usuario');
-
-    if (!id_usuario) {
-        console.error("ID do usuário não encontrado na sessão!");
-        return;
-    }
-
-    try {
-        const resposta = await fetch(`/personagem?usuario=${id_usuario}`);
-        if (!resposta.ok) throw new Error("Erro ao buscar personagens");
-
-        const personagens = await resposta.json();
-
-        const listaPersonagens = document.getElementById("listaPersonagens");
-        listaPersonagens.innerHTML = "";
-
-        personagens.forEach((personagem) => {
-            const item = document.createElement("li");
-            item.innerHTML = `
-                <strong>${personagem.nome}</strong> - 
-                ${personagem.classe} (${personagem.origem}) - 
-                Nível ${personagem.nivel} - 
-                Campanha: ${personagem.nomeCampanha}
-                <button onclick="editarPersonagem(${personagem.id_personagem})">Editar</button>
-                <button onclick="deletarPersonagem(${personagem.id_personagem})">Excluir</button>
-            `;
-            listaPersonagens.appendChild(item);
-        });
-    } catch (erro) {
-        console.error("Erro ao carregar personagens:", erro);
-    }
-}
-
 function carregarPersonagensDoUsuario() {
-    const id_usuario = sessionStorage.getItem("id_usuario");
+    var id_usuario = sessionStorage.ID_USUARIO;
+    console.log("Carregando personagens do usuário:", id_usuario);
 
     fetch(`/personagem/usuario/${id_usuario}`)
         .then(res => res.json())
@@ -149,27 +105,27 @@ function carregarPersonagensDoUsuario() {
                     <p><strong>Classe:</strong> ${p.classe}</p>
                     <p><strong>Nível:</strong> ${p.nivel}</p>
                     <p><strong>Campanha:</strong> ${p.nomeCampanha}</p>
+                    <button onclick="editar(${p.id})">Editar</button>
+                    <button onclick="deletar(${p.id})">Excluir</button>
                 `;
                 container.appendChild(card);
             });
         })
-        .catch(err => {
-            console.error("Erro ao carregar personagens do usuário:", err);
-        });
-}
-
+};
 
 async function editar(id) {
     try {
         const resposta = await fetch(`/personagem/${id}`);
         const p = await resposta.json();
+        console.log("Personagem recebido para edição:", p);
 
-        form.id_personagem.value = p.id_personagem;
+        form.id_personagem.value = p.id;
         form.nome.value = p.nome || "";
         form.origem.value = p.origem || "";
         form.classe.value = p.classe || "";
         form.nivel.value = p.nivel || 1;
-        form.id_campanha.value = p.id_campanha || "";
+        form.id_campanha.value = p.fk_campanha || "";
+
     } catch (erro) {
         console.error("Erro ao editar personagem:", erro);
     }
@@ -185,8 +141,7 @@ async function deletar(id) {
     }
 }
 
+
 document.addEventListener("DOMContentLoaded", () => {
     carregarPersonagensDoUsuario();
-    carregarCampanhas();
-    carregarPersonagens();
 });

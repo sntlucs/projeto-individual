@@ -24,7 +24,7 @@ function cadastrar() {
     finalizarAguardar();
     return false;
   } else {
-    setInterval(sumirMensagem, 5000);
+    // setInterval(sumirMensagem, 5000);
   }
 
   // Enviando o valor da nova input
@@ -55,39 +55,17 @@ function cadastrar() {
         }, "2000");
 
         // limparFormulario();
-        // finalizarAguardar();
+        finalizarAguardar();
       } else {
         throw "Houve um erro ao tentar realizar o cadastro!";
       }
     })
     .catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
-      // finalizarAguardar();
+      finalizarAguardar();
     });
 
   return false;
 }
 
-// function listar() {
-//   fetch("/usuarios/listar", {
-//     method: "GET",
-//   })
-//     .then(function (resposta) {
-//       resposta.json().then((empresas) => {
-//         empresas.forEach((empresa) => {
-//           listaMontadorasCadastradas.push(empresa);
 
-//           console.log("listaMontadorasCadastradas")
-//           console.log(listaMontadorasCadastradas[0].cnpjVar)
-//         });
-//       });
-//     })
-//     .catch(function (resposta) {
-//       console.log(`#ERRO: ${resposta}`);
-//     });
-// }
-
-// function sumirMensagem() {
-//   cardErro.style.display = "none";
-// }
-// //
