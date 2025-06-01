@@ -37,7 +37,7 @@ function buscarPorId(id_personagem) {
     return database.executar(instrucao);
 }
 
-function inserir(nome, origem, classe, nivel, id_usuario, id_campanha) {
+function inserir(nome, origem, classe, nivel, id_usuario) {
     var instrucaoPersonagem = `
         INSERT INTO Personagem (nome, origem, classe, nivel, fk_usuario)
         VALUES ('${nome}', '${origem}', '${classe}', ${nivel}, ${id_usuario});
@@ -77,14 +77,17 @@ async function atualizar(id_personagem, nome, origem, classe, nivel, id_usuario,
     }
 }
 
-function deletar(id_personagem) {
-    var instrucaoRelacionamento = `
+async function deletar(id_personagem) {
+    try {
+        await database.executar(`
         DELETE FROM Campanha_Personagem WHERE fk_personagem = ${id_personagem};
-    `;
-    var instrucao = `
-        DELETE FROM Personagem WHERE id = ${id_personagem};
-    `;
-    return database.executar(instrucaoRelacionamento + instrucao);
+    `);
+
+        await database.executar(`DELETE FROM Personagem WHERE id = ${id_personagem};`)
+    } catch (erro) {
+        console.error("Erro ao atualizar personagem:", erro);
+        throw erro;
+    }
 }
 
 module.exports = {

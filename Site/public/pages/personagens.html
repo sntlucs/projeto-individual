@@ -2,55 +2,87 @@
 <html lang="pt-br">
 
 <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Personagem - CodeX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/logo/Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/body.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
     </style>
-    <meta charset="UTF-8">
-    <title>Cadastro de Personagem</title>
-    <link rel="shortcut icon" href="../img/logo/Logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/body.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
+    <header>
+        <section class="container">
+            <section id="header_logo">
+                <a href="bem-vindo.html">
+                    <img class="logo" src="../img/logo/Logo.png" alt="Logo do Site">
+                </a>
+            </section>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="bem-vindo.html">Home</a></li>
+                    <li><a href="dashboards.html">Dashboards</a></li>
+                    <li><a href="rpg.html">RPG de Mesa</a></li>
+                    <li><a href="dado.html">Gerador de Dados</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
     <main>
-        <h1>Cadastro de Personagem de RPG</h1>
+        <!-- Seção ciano -->
+        <section class="claro section_pagina centralizado">
+            <section class="container">
+                <h1 class="titulo">Cadastro de Personagem</h1>
 
-        <form id="form-personagem">
-            <input type="hidden" id="id_personagem" name="id_personagem">
+                <form id="form-personagem" class="caixa-dados">
+                    <input type="hidden" id="id_personagem" name="id_personagem" />
 
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required />
 
-            <label for="origem">Origem:</label>
-            <input type="text" id="origem" required>
+                    <label for="origem">Origem:</label>
+                    <input type="text" id="origem" required />
 
-            <label for="classe">Classe:</label>
-            <input type="text" id="classe" required>
+                    <label for="classe">Classe:</label>
+                    <input type="text" id="classe" required />
 
-            <label for="nivel">Nível:</label>
-            <input type="number" id="nivel" required>
+                    <label for="nivel">Nível:</label>
+                    <input type="number" id="nivel" min="1" required />
 
-            <label for="id_campanha">Campanha:</label>
-            <select id="id_campanha" required>
-                <option value="">Carregando campanhas...</option>
-            </select>
+                    <label for="id_campanha">Campanha:</label>
+                    <select id="id_campanha" required>
+                        <option value="">Carregando campanhas...</option>
+                    </select>
 
-            <button type="submit">Salvar</button>
-        </form>
+                    <button type="submit" class="botao main">Salvar</button>
+                </form>
+            </section>
+        </section>
 
-
-        <section id="lista-personagens">
-            <h2>Personagens Cadastrados</h2>
-            <ul id="personagens">
+        <section class="escuro section_pagina centralizado">
+            <section class="container">
+                <h2 class="titulo">Personagens Cadastrados</h2>
                 <div id="lista-personagens"></div>
-            </ul>
+            </section>
         </section>
     </main>
 
+    <footer class="escuro">
+        <p>Made by Lucas Rodrigues.</p>
+    </footer>
+
     <script src="../js/add-personagem.js"></script>
 </body>
-
 </html>

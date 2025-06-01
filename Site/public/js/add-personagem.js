@@ -135,7 +135,7 @@ async function deletar(id) {
     if (!confirm("Deseja mesmo excluir este personagem?")) return;
     try {
         await fetch(`/personagem/${id}`, { method: "DELETE" });
-        carregarPersonagens();
+        carregarPersonagensDoUsuario();
     } catch (erro) {
         console.error("Erro ao excluir personagem:", erro);
     }
