@@ -1,7 +1,7 @@
 let listaUsuarios = [];
 
 function cadastrar() {
-  aguardar();
+
 
   var nomeVar = ipt_nome.value;
   var emailVar = ipt_email.value;

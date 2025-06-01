@@ -766,5 +766,100 @@ body {
 }
 
 .personagem-card button:hover {
-  background-color: #a47c3e;
+  background-color: #043247;
+}
+
+/* Novo layout em linhas para o formulário de personagem */
+#form-personagem {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "nome origem classe"
+    "nivel campanha campanha"
+    "botao botao botao";
+  gap: 1rem;
+  max-width: 800px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  background-color: var(--corFundo);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group[data-area="nome"] {
+  grid-area: nome;
+}
+
+.form-group[data-area="origem"] {
+  grid-area: origem;
+}
+
+.form-group[data-area="classe"] {
+  grid-area: classe;
+}
+
+.form-group[data-area="nivel"] {
+  grid-area: nivel;
+}
+
+.form-group[data-area="campanha"] {
+  grid-area: campanha;
+}
+
+.form-group.full-width {
+  grid-area: botao;
+  display: flex;
+  justify-content: center;
+}
+
+#lista-personagens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+  gap: 2rem;
+  padding-top: 3rem;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  #lista-personagens {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #lista-personagens {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section_personagem {
+    scroll-margin-top: 4rem;
+    min-height: 90vh;
+    background-color: var(--corFundoBody);
+    color: var(--corTexto);
+}
+
+.section_personagem .container {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+
+.titulo_personagem {
+    font-family: "Tagesschrift";
+    font-size: 3rem;
+    text-align: center;
+    padding: 5rem;
 }
