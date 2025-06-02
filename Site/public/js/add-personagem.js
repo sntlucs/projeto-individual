@@ -57,6 +57,7 @@ form.addEventListener("submit", async (e) => {
         form.reset();
         form.id_personagem.value = "";
         carregarPersonagensDoUsuario();
+        carregarGraficosPersonagens();
     } catch (erro) {
         console.error("Erro ao salvar personagem:", erro);
         alert("Erro ao salvar personagem.");
@@ -129,6 +130,8 @@ async function editar(id) {
     } catch (erro) {
         console.error("Erro ao editar personagem:", erro);
     }
+    carregarGraficosPersonagens();
+
 }
 
 async function deletar(id) {
@@ -139,6 +142,8 @@ async function deletar(id) {
     } catch (erro) {
         console.error("Erro ao excluir personagem:", erro);
     }
+    carregarGraficosPersonagens();
+
 }
 
 

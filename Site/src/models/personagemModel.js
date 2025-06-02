@@ -90,6 +90,21 @@ async function deletar(id_personagem) {
     }
 }
 
+async function listarDadosGraficos(id_usuario) {
+    const instrucao = `
+        SELECT 
+            p.nivel,
+            p.classe,
+            s.nome AS sistema
+        FROM Personagem p
+        JOIN Campanha_Personagem cp ON cp.fk_personagem = p.id
+        JOIN Campanha c ON c.id = cp.fk_campanha
+        JOIN Sistema s ON s.id = c.fk_sistema
+        WHERE p.fk_usuario = ${id_usuario};
+    `;
+    return await database.executar(instrucao);
+}
+
 module.exports = {
     listar,
     buscarPorId,
@@ -97,5 +112,6 @@ module.exports = {
     associarCampanha,
     atualizar,
     deletar,
-    listarPorUsuario
+    listarPorUsuario,
+    listarDadosGraficos
 };

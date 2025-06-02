@@ -90,6 +90,36 @@
                 <div id="lista-personagens"></div>
             </section>
         </section>
+
+        <section class="escuro section_pagina">
+            <section class="grafico-dashboard">
+                <h2 class="titulo">Estatísticas dos Personagens</h2>
+                <section class="container">
+
+                    <div class="graficos-grid">
+                        <div class="grafico-card">
+                            <h3>Níveis</h3>
+                            <p class="legenda">Seus personagens com níveis mais altos</p>
+                            <canvas id="graficoNiveis"></canvas>
+                        </div>
+
+                        <div class="grafico-card">
+                            <h3>Sistemas</h3>
+                            <p class="legenda">Sistemas mais utilizados por você</p>
+                            <canvas id="graficoSistemas"></canvas>
+                        </div>
+
+                        <div class="grafico-card">
+                            <h3>Classes</h3>
+                            <p class="legenda">Classes mais utilizadas</p>
+                            <canvas id="graficoClasses"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+        </section>
+
     </main>
 
     <footer class="escuro">
@@ -97,6 +127,8 @@
     </footer>
 
     <script src="../js/add-personagem.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/graficos_personagens.js"></script>
 </body>
 
 </html>

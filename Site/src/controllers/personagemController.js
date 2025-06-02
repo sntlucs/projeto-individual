@@ -89,11 +89,17 @@ function deletar(req, res) {
         });
 }
 
+async function listarDadosGraficos(id_usuario) {
+    const todos = await personagemModel.listarDadosGraficos(id_usuario);
+    return todos;
+}
+
 module.exports = {
     listar,
     buscarPorId,
     inserir,
     atualizar,
     deletar,
-    listarPorUsuario
+    listarPorUsuario,
+    listarDadosGraficos
 };
