@@ -109,6 +109,7 @@ function carregarPersonagensDoUsuario() {
                     <button onclick="editar(${p.id})">Editar</button>
                     <button onclick="deletar(${p.id})">Excluir</button>
                 `;
+                document.getElementById("kpiTotalPersonagens").textContent = personagens.length;
                 container.appendChild(card);
             });
         })
