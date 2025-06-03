@@ -59,6 +59,7 @@ async function carregarGraficosPersonagens() {
                     label: 'Qtd. por Classe',
                     data: Object.values(classes),
                     backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                    
                 }]
             },
             options: {
